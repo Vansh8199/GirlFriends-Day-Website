@@ -1,0 +1,971 @@
+.page {
+    display: none;
+}
+
+.page.active {
+    display: flex;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+    linear-gradient(135deg,#ffd1dc,#fff0f5,#ffe4ec);
+
+    font-family: 'Poppins', sans-serif;
+
+    color:#5b2638;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* Floating background effect */
+
+body::before {
+
+    content:"❤️ 💗 💕 ❤️ 💗";
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    font-size:40px;
+
+    opacity:0.08;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    pointer-events:none;
+
+    animation:float 12s infinite linear;
+
+}
+
+
+
+@keyframes float {
+
+    from{
+
+        transform:translateY(100px);
+
+    }
+
+    to{
+
+        transform:translateY(-100px);
+
+    }
+
+}
+
+
+
+
+/* Pages */
+
+
+.page {
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:40px 20px;
+
+    animation:slide 0.8s ease;
+
+}
+
+
+
+.page.active {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+@keyframes slide {
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* Main glass card */
+
+
+.card {
+
+    width:90%;
+
+    max-width:950px;
+
+    background:rgba(255,255,255,0.75);
+
+    padding:45px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 20px 50px rgba(193,45,93,0.2);
+
+    backdrop-filter:blur(15px);
+
+}
+
+
+
+/* Headings */
+
+
+h1 {
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:55px;
+
+    color:#d81b60;
+
+    margin-bottom:20px;
+
+}
+
+
+h2 {
+
+    color:#c2185b;
+
+    margin:15px 0;
+
+}
+
+
+h3 {
+
+    color:#ad1457;
+
+    font-size:28px;
+
+}
+
+
+
+p {
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin:15px 0;
+
+}
+
+
+
+/* Buttons */
+
+
+button {
+
+    border:none;
+
+    background:
+
+    linear-gradient(135deg,#ec407a,#c2185b);
+
+    color:white;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    margin-top:25px;
+
+    box-shadow:
+
+    0 8px 20px rgba(194,24,91,0.3);
+
+    transition:.3s;
+
+}
+
+
+
+button:hover {
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+/* Input */
+
+
+input {
+
+    width:80%;
+
+    max-width:350px;
+
+    padding:15px;
+
+    border-radius:30px;
+
+    border:2px solid #ec407a;
+
+    text-align:center;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+
+
+/* Error */
+
+
+#error {
+
+    color:red;
+
+}
+
+
+
+
+/* Date Counter */
+
+
+#daysCounter {
+
+    font-size:38px;
+
+    font-weight:600;
+
+    color:#e91e63;
+
+    margin:25px;
+
+}
+
+
+
+
+/* Scrapbook */
+
+
+.scrapbook {
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+.memory {
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+
+
+.memory:nth-child(odd){
+
+    transform:rotate(-3deg);
+
+}
+
+
+
+.memory:nth-child(even){
+
+    transform:rotate(3deg);
+
+}
+
+
+
+.memory:hover {
+
+    transform:
+
+    translateY(-12px)
+
+    rotate(0deg);
+
+}
+
+
+
+.memory img {
+
+    width:100%;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+
+
+.memory h2 {
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:27px;
+
+}
+
+
+
+.memory p {
+
+    font-size:14px;
+
+}
+
+
+
+
+/* Gifts */
+
+
+.gifts {
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.gift {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+
+
+.gift:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.gift h2 {
+
+    font-size:22px;
+
+}
+
+
+
+.gift p {
+
+    font-size:15px;
+
+}
+
+
+
+
+/* Final Page */
+
+
+.finalCard h1 {
+
+    font-size:70px;
+
+}
+
+
+.finalCard {
+
+    padding:60px 40px;
+
+}
+
+
+
+
+/* Responsive */
+
+
+@media(max-width:900px){
+
+    .scrapbook{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .gifts{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+    .card{
+
+        padding:25px;
+
+    }
+
+
+    h1{
+
+        font-size:42px;
+
+    }
+
+
+    .scrapbook{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .memory img{
+
+        height:230px;
+
+    }
+
+
+    .finalCard h1{
+
+        font-size:45px;
+
+    }
+
+}
+
+/* ================= FLOATING HEARTS ================= */
+
+.heart {
+
+    position: fixed;
+
+    bottom: -20px;
+
+    font-size: 25px;
+
+    animation: heartFloat 8s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+}
+
+
+
+@keyframes heartFloat {
+
+    0% {
+
+        transform: translateY(0) rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+
+    100% {
+
+        transform: translateY(-110vh) rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+
+/* ================= TYPEWRITER ================= */
+
+.typewriter {
+
+    overflow: hidden;
+
+    border-right: 3px solid #e91e63;
+
+    white-space: nowrap;
+
+    animation:
+
+    typing 4s steps(40),
+
+    blink .7s infinite;
+
+}
+
+
+
+@keyframes typing {
+
+    from {
+
+        width:0;
+
+    }
+
+
+    to {
+
+        width:100%;
+
+    }
+
+}
+
+
+
+@keyframes blink {
+
+    50% {
+
+        border-color:transparent;
+
+    }
+
+}
+
+/* ================= FINAL REVEAL ================= */
+
+
+.hiddenMessage {
+
+    display:none;
+
+    margin-top:30px;
+
+    animation: reveal 1s ease;
+
+}
+
+
+
+.hiddenMessage.show {
+
+    display:block;
+
+}
+
+
+
+#revealBtn {
+
+    margin-top:20px;
+
+}
+
+
+
+@keyframes reveal {
+
+    from {
+
+        opacity:0;
+
+        transform:scale(0.8);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+.finalCard h2 {
+
+    font-family:'Dancing Script', cursive;
+
+    font-size:35px;
+
+}
+
+/* ================= LOADING SCREEN ================= */
+
+
+#loader {
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100vh;
+
+    background:linear-gradient(135deg,#ffd1dc,#fff0f5);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+
+.loaderHeart {
+
+    font-size:80px;
+
+    animation:pulse 1s infinite;
+
+}
+
+
+
+#loader h2 {
+
+    margin-top:20px;
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:35px;
+
+}
+
+
+
+#loader.hide {
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+
+@keyframes pulse {
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+}
+/* ================= FIRST PAGE ================= */
+
+
+.firstCard {
+
+    animation:zoomIn 1s ease;
+
+}
+
+
+
+.glowHeart {
+
+    font-size:80px;
+
+    animation:pulse 1.5s infinite;
+
+    filter:drop-shadow(0 0 20px pink);
+
+}
+
+
+
+.nameReveal {
+
+    animation:nameShow 2s ease;
+
+}
+
+
+
+@keyframes nameShow {
+
+
+from{
+
+    opacity:0;
+
+    letter-spacing:30px;
+
+}
+
+
+to{
+
+    opacity:1;
+
+    letter-spacing:normal;
+
+}
+
+
+}
+
+
+
+@keyframes zoomIn {
+
+
+from{
+
+    transform:scale(.8);
+
+    opacity:0;
+
+}
+
+
+to{
+
+    transform:scale(1);
+
+    opacity:1;
+
+}
+
+}
+/* ================= FINAL PAGE ================= */
+
+
+.finalCard {
+
+    background:
+    rgba(255,255,255,.9);
+
+    min-height:500px;
+
+    justify-content:center;
+
+}
+
+
+.finalCard h1 {
+
+    font-size:70px;
+
+}
+
+
+.hiddenMessage {
+
+    display:none;
+
+    animation:fadeUp 1s ease;
+
+}
+
+
+.hiddenMessage.show {
+
+    display:block;
+
+}
+
+
+
+@keyframes fadeUp {
+
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+@media(max-width:600px){
+
+    .card{
+
+        width:95%;
+        padding:20px;
+
+    }
+
+
+    h1{
+
+        font-size:38px;
+
+    }
+
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+
+    .scrapbook{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+
+    .memory img{
+
+        height:220px;
+
+        object-fit:cover;
+
+    }
+
+
+    .memory{
+
+        transform:rotate(0deg);
+
+    }
+
+
+    button{
+
+        width:90%;
+
+        font-size:15px;
+
+    }
+
+}
